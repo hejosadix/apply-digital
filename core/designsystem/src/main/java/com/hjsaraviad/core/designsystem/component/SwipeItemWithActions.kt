@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.IntOffset
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -53,7 +54,7 @@ fun SwipeItemWithActions(
 
     Box(
         modifier = modifier
-            .fillMaxWidth()
+            .fillMaxWidth().testTag("swipeItemWithActions")
             .height(IntrinsicSize.Max),
         contentAlignment = Alignment.CenterEnd
     ) {

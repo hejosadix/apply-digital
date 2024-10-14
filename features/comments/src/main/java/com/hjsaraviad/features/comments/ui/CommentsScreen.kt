@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hjsaraviad.core.data.comments.models.Comment
@@ -59,7 +60,7 @@ private fun CommentsContent(
         onRefresh = onRefresh,
     ) {
         LazyColumn(
-            Modifier.fillMaxSize(),
+            Modifier.fillMaxSize().testTag("comments"),
             contentPadding = PaddingValues(vertical = 16.dp),
         ) {
             itemsIndexed(comments, key = { _, comment -> comment.objectID }) { index, comment ->
