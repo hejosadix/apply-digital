@@ -49,6 +49,7 @@ class CommentsViewModel(private val repository: CommentsRepository) : ViewModel(
     private fun deleteComment(key: String) {
         viewModelScope.launch {
             val selectedComment = state.value.comments.firstOrNull { it.objectID == key }
+            _state.value = state.value.copy(comments = state.value.comments.filter { it.objectID != key })
             selectedComment?.let {
                 repository.deleteLocalComment(it)
             }
