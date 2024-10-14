@@ -22,3 +22,11 @@ dependencyResolutionManagement {
 rootProject.name = "Apply Digital"
 include(":app")
 include(":features")
+include(":core")
+include(":data")
+include(":features:comments")
+include(":core:designsystem")
+include(":core:database")
+include(":data:comments")
+include(":core:network")
+include(":features:webview")
